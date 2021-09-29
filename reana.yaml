@@ -6,7 +6,7 @@ inputs:
   parameters:
     notebook: code/myproject.ipynb
     input_file: data/mydata.csv
-    output_file: results/plot.png
+    output_file: plot.png
 workflow:
   type: serial
   specification:
@@ -16,4 +16,5 @@ workflow:
           - mkdir -p results && papermill ${notebook} /dev/null -p input_file ${input_file} -p output_file ${output_file}
 outputs:
   files:
-    - results/plot.png
+    - plot.png
+    - plot_data.png
